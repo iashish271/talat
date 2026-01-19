@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Photos from the Letter 💖</title>
+  <title>Memories from the Letter 💖</title>
   <style>
     body {
       margin: 0;
@@ -15,7 +15,7 @@
 
     .title {
       text-align: center;
-      font-size: 2em;
+      font-size: 2.5em;
       color: #ff1493;
       margin-top: 30px;
       text-shadow: 1px 1px #ff69b4;
@@ -23,7 +23,7 @@
 
     .photo {
       position: absolute;
-      width: 150px;
+      width: 160px;
       border: 5px solid #ff69b4;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
@@ -34,11 +34,34 @@
       transform: scale(1.1) rotate(3deg);
     }
 
-    .photo:nth-child(3) { top: 100px; left: 50px; transform: rotate(-10deg); }
-    .photo:nth-child(4) { top: 120px; right: 60px; transform: rotate(12deg); }
-    .photo:nth-child(5) { bottom: 100px; left: 80px; transform: rotate(8deg); }
-    .photo:nth-child(6) { bottom: 120px; right: 90px; transform: rotate(-6deg); }
-    .photo:nth-child(7) { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(0deg); }
+    /* Position each photo */
+    #memory3 { top: 100px; left: 50px; }
+    #memory4 { top: 100px; right: 50px; }
+    #memory5 { bottom: 100px; left: 50px; }
+    #memory6 { bottom: 100px; right: 50px; }
+    #memory7 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+    .next-btn {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ff69b4;
+      color: white;
+      font-size: 1.3em;
+      padding: 14px 30px;
+      border-radius: 40px;
+      text-decoration: none;
+      box-shadow: 0 5px #ff1493;
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .next-btn:hover {
+      background-color: #ff1493;
+      box-shadow: 0 3px #c71585;
+      transform: translateX(-50%) scale(1.05);
+    }
 
     .heart {
       position: absolute;
@@ -58,12 +81,15 @@
 <body>
   <div class="title">💖 Memories from the Letter 💖</div>
 
-  <!-- Replace these src paths with your actual image URLs -->
-  <img src="3.jpg" class="photo" alt="Memory 1">
-  <img src="4.jpg" class="photo" alt="Memory 2">
-  <img src="5.jpg" class="photo" alt="Memory 3">
-  <img src="6.jpg" class="photo" alt="Memory 4">
-  <img src="7.jpg" class="photo" alt="Memory 5">
+  <!-- Your actual images -->
+  <img src="3.jpg" class="photo" id="memory3" alt="Memory 3">
+  <img src="4.jpg" class="photo" id="memory4" alt="Memory 4">
+  <img src="5.jpg" class="photo" id="memory5" alt="Memory 5">
+  <img src="6.jpg" class="photo" id="memory6" alt="Memory 6">
+  <img src="7.jpg" class="photo" id="memory7" alt="Memory 7">
+
+  <!-- Button to go to next page -->
+  <a href="nextpage.html" class="next-btn">Go to Next Surprise 🎁</a>
 
   <script>
     function createHeart() {
@@ -83,5 +109,3 @@
   </script>
 </body>
 </html>
-
-
