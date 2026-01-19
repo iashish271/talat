@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photos from the Letter 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom right, #ffe6f0, #fff5cc);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2em;
+      color: #ff1493;
+      margin-top: 30px;
+      text-shadow: 1px 1px #ff69b4;
+    }
+
+    .photo {
+      position: absolute;
+      width: 150px;
+      border: 5px solid #ff69b4;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+      transition: transform 0.5s ease;
+    }
+
+    .photo:hover {
+      transform: scale(1.1) rotate(3deg);
+    }
+
+    .photo:nth-child(2) { top: 100px; left: 50px; transform: rotate(-10deg); }
+    .photo:nth-child(3) { top: 120px; right: 60px; transform: rotate(12deg); }
+    .photo:nth-child(4) { bottom: 100px; left: 80px; transform: rotate(8deg); }
+    .photo:nth-child(5) { bottom: 120px; right: 90px; transform: rotate(-6deg); }
+    .photo:nth-child(6) { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(0deg); }
+
+    .heart {
+      position: absolute;
+      color: #ff69b4;
+      font-size: 24px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="title">💖 Memories from the Letter 💖</div>
+
+  <!-- Replace these src paths with your actual image URLs -->
+  <img src="3.jpg" class="photo" alt="Memory 1">
+  <img src="4.jpg" class="photo" alt="Memory 2">
+  <img src="5.jpg" class="photo" alt="Memory 3">
+  <img src="6.jpg" class="photo" alt="Memory 4">
+  <img src="7.jpg" class="photo" alt="Memory 5">
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
